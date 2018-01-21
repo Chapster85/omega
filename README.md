@@ -1,62 +1,58 @@
-<h2><strong>Omega Network Staging Repository (Version 2.3.2)</strong></h2>
-<p>More information at omega.com Visit our ANN thread at https://bitcointalk.org/index.php?topic=1831629</p>
-<h3><strong>Coin specs:</strong></h3>
-<p><strong><span style="color: #800080;"><em>Algo:</em></span></strong></p>
-<ul>
-<li>Xevan</li>
-</ul>
-<p><strong><span style="color: #800080;"><em>PoW Block Reward:</em></span></strong></p>
-<ul>
-<li>[block# 2-43200] 20% MN (0.4 OMEGA) / 80% MINER (1.6 OMEGA) [block# 43201-151200] 20% MN (0.4 OMEGA) / 70% MINER (1.4 OMEGA) / 10% Available to the budget system (0.20 OMEGA) [block# 151201-259200] 45% MN (0.9 OMEGA) / 45% MINER (0.9 OMEGA) / 10% Available to the budget system (0.2 OMEGA)</li>
-</ul>
-<p><strong><span style="color: #800080;"><em>PoS Block Reward:</em></span></strong></p>
-<ul>
-<li>[block# 259201-Infinite] Variable based on SeeSaw Reward Mechanism</li>
-</ul>
-<p><strong><span style="color: #800080;"><em>Block Time:</em></span></strong></p>
-<ul>
-<li>60 Seconds with Retargeting every Block</li>
-</ul>
-<p><strong><span style="color: #800080;"><em>Max Coin Supply:</em></span></strong></p>
-<ul>
-<li>PoW Phase: 518.400</li>
-</ul>
-<p><strong><span style="color: #800080;"><em>Max Coin Supply:</em></span></strong></p>
-<ul>
-<li>PoS Phase: Infinte</li>
-</ul>
-<p><strong><span style="color: #800080;"><em>PoW Phase 1:</em></span></strong></p>
-<ul>
-<li>[block# 1] 810000 Premine to support the swap.</li>
-</ul>
-<p><strong><span style="color: #800080;"><em>PoW Phase 2:</em></span></strong></p>
-<ul>
-<li>[block#&rsquo;s 2-259200] Approx 180 Days</li>
-</ul>
-<p><strong><span style="color: #800080;"><em>PoW Rewards Breakdown:</em></span></strong></p>
-<ul>
-<li>[block&rsquo;s &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2-43200] 20% MN (0.4 OMEGA) &nbsp; &nbsp;/ 80% MINER (1.6 OMEGA)</li>
-<li>[block&rsquo;s &nbsp; 43201-151200] 20% MN (0.4 OMEGA) &nbsp; &nbsp;/ 70% MINER (1.4 OMEGA) &nbsp;/ 10% Available to the budget system (0.20 OMEGA)</li>
-<li>[block&rsquo;s 151201-259200] 45% MN (0.9 OMEGA) / 45% MINER (0.9 OMEGA) / 10% Available to the budget system ( &nbsp;0.2 OMEGA)</li>
-</ul>
-<p><strong><span style="color: #800080;"><em>PoS Rewards Breakdown:</em></span></strong></p>
-<ul>
-<li>PoS Phase 1: [blocks 259201-302399] 1 OMEGA (90% distributed to staker and masternode - 10% available to budget system)</li>
-<li>PoS Phase 2: [blocks 302400-345599] 0.95 OMEGA (90% distributed to staker and masternode - 10% available to budget system)</li>
-<li>PoS Phase 3: [blocks 345600-388799] 0.9 OMEGA (90% distributed to staker and masternode - 10% available to budget system)</li>
-<li>PoS Phase 4: [blocks 388800-431999] 0.85 OMEGA (90% distributed to staker and masternode - 10% available to budget system)</li>
-<li>PoS Phase 5: [blocks 432000-475199] 0.80 OMEGA (90% distributed to staker and masternode - 10% available to budget system)</li>
-<li>PoS Phase 6: [blocks 475200-518399] 0.75 OMEGA (90% distributed to staker and masternode - 10% available to budget system)</li>
-<li>PoS Phase 7: [blocks 518400-561599] 0.70 OMEGA (90% distributed to staker and masternode - 10% available to budget system)</li>
-<li>PoS Phase 8: [blocks 561600-604799] 0.75 OMEGA (90% distributed to staker and masternode - 10% available to budget system)</li>
-<li>PoS Phase 9: [blocks 604800-647999] 0.70 OMEGA (90% distributed to staker and masternode - 10% available to budget system)</li>
-<li>PoS Phase X: [blocks 648000-Infinite] &nbsp; 0.25 OMEGA (90% distributed to staker and masternode - 10% available to budget system)</li>
-</ul>
-<br/>
-<p>&nbsp;</p>
-<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</p>
-<p>&nbsp;</p>
-<p>Omega Network is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.</p>
-<p>Anonymized transactions using coin mixing technology, we call it <em>Obfuscation</em>.</p>
-<p>Fast transactions featuring guaranteed zero confirmation transactions, we call it <em>SwiftTX</em>.</p>
-<p>Decentralized blockchain voting providing for consensus based advancement of the current Masternode technology used to secure the network and provide the above features, each Masternode is secured with collateral of 1000 OMEGA</p>
+Omega Network Core integration/staging repository
+=================================================
+
+Omega is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
+- Anonymized transactions using coin mixing technology, we call it _Obfuscation_.
+- Fast transactions featuring guaranteed zero confirmation transactions, we call it _SwiftTX_.
+- Decentralized blockchain voting providing for consensus based advancement of the current Masternode
+  technology used to secure the network and provide the above features, each Masternode is secured
+  with a collateral of 2500 OMEGA.
+
+### Coin Specs
+<table>
+<tr><td>Algo</td><td>OmegaHash</td></tr>
+<tr><td>Block Time</td><td>60 Seconds</td></tr>
+<tr><td>Difficulty Retargeting</td><td>Every blocks</td></tr>
+<tr><td>Max Coin Supply (PoW Phase)</td><td>20,000,000 OMEGA</td></tr>
+<tr><td>Max Coin Supply (PoS Phase)</td><td>Infinite</td></tr>
+<tr><td>Premine</td><td>580,000 OMEGA</td></tr>
+</table>
+
+### Reward Distribution
+
+<table>
+<th colspan=4>PoW Phase</th>
+<tr><th>Block Height</th><th>Reward Amount</th><th>Notes</th><th>Duration (Days)</th></tr>
+<tr><td>1</td><td>580,000 OMEGA</td><td>Initial Premine</td><td>0 Days</td></tr>
+<tr><td>2-100000</td><td>10 - 195 OMEGA</td><td>Open Mining</td><td>Gradually incrementing to prevent instamining</td></tr>
+<tr><td>100001-103500</td><td>195 - 10 OMEGA</td><td>Open Mining</td><td>Gradually decreasing to smooth PoS transition</td></tr>
+
+<tr><th colspan=4>PoS Phase</th></tr>
+<tr><th>Block Height</th><th colspan=3>Reward Amount</th></tr>
+<tr><td>100001+</td><td colspan=3>Check PoS Rewards Breakdown below.</td></tr>
+</table>
+
+### PoW Rewards Breakdown
+
+<table>
+<th>Block Height</th><th>Masternodes</th><th>Miner</th><th>Budget</th>
+<tr><td>2-33000</td><td>80% (156 OMEGA)</td><td>20% (39 OMEGA)</td><td>N/A</td></tr>
+<tr><td>33001-66000</td><td>50% (97.5 OMEGA)</td><td>40% (78 OMEGA)</td><td>10% (19.5 OMEGA)</td></tr>
+<tr><td>66001-100000</td><td>30% (58.5 OMEGA)</td><td>60% (117 OMEGA)</td><td>10% (19.5 OMEGA)</td></tr>
+</table>
+
+### PoS Rewards Breakdown
+
+<table>
+<th>Phase</th><th>Block Height</th><th>Reward</th><th>Masternodes & Stakers</th><th>Budget</th>
+<tr><td>Phase 1</td><td>259201-302399</td><td>50 OMEGA</td><td>90% (45 OMEGA)</td><td>10% (5 OMEGA)</td></tr>
+<tr><td>Phase 2</td><td>302400-345599</td><td>45 OMEGA</td><td>90% (40.5 OMEGA)</td><td>10% (4.5 OMEGA)</td></tr>
+<tr><td>Phase 3</td><td>345600-388799</td><td>40 OMEGA</td><td>90% (36 OMEGA)</td><td>10% (4 OMEGA)</td></tr>
+<tr><td>Phase 4</td><td>388800-431999</td><td>35 OMEGA</td><td>90% (31.5 OMEGA)</td><td>10% (3.5 OMEGA)</td></tr>
+<tr><td>Phase 5</td><td>432000-475199</td><td>30 OMEGA</td><td>90% (27 OMEGA)</td><td>10% (3 OMEGA)</td></tr>
+<tr><td>Phase 6</td><td>475200-518399</td><td>25 OMEGA</td><td>90% (22.5 OMEGA)</td><td>10% (2.5 OMEGA)</td></tr>
+<tr><td>Phase 7</td><td>518400-561599</td><td>20 OMEGA</td><td>90% (18 OMEGA)</td><td>10% (2 OMEGA)</td></tr>
+<tr><td>Phase 8</td><td>561600-604799</td><td>15 OMEGA</td><td>90% (13.5 OMEGA)</td><td>10% (1.5 OMEGA)</td></tr>
+<tr><td>Phase 9</td><td>604800-647999</td><td>10 OMEGA</td><td>90% (9 OMEGA)</td><td>10% (1 OMEGA)</td></tr>
+<tr><td>Phase X</td><td>648000-Infinite</td><td>5 OMEGA</td><td>90% (4.5 OMEGA)</td><td>10% (0.5 OMEGA)</td></tr>
+</table>

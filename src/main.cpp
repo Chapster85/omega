@@ -2205,17 +2205,15 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 	
 	if (nHeight == 0)
 		return 0;
-	
-    if (nHeight <= 43200) {
-        ret = blockValue / 5;
-    } else if (nHeight < 86400 && nHeight > 43200) {
-        ret = blockValue / (100 / 30);
-    } else if (nHeight < 151200 && nHeight >= 86400) {
-        ret = blockValue / (100 / 30);
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 151200) {
-        ret = blockValue / 2;
-    } else if (nHeight > Params().LAST_POW_BLOCK()) {
-        int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
+
+        if (nHeight <= 33000) {
+            ret = blockValue / (100/80);  // 80% masternode
+        } else if (nHeight > 33000 && nHeight <= 66000) {
+            ret = blockValue / (100/50);  // 50% masternode
+        } else if (nHeight > 66000 && nHeight <= 100000) {
+            ret = blockValue / (100/30);  // 30% masternode
+        } else if (nHeight > Params().LAST_POW_BLOCK()) {
+        int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;	
         int64_t mNodeCoins = mnodeman.size() * 2500 * COIN;
 
         //if a mn count is inserted into the function we are looking for a specific result for a masternode count
