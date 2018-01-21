@@ -1,0 +1,26 @@
+# /etc/conf.d/omegad: config file for /etc/init.d/omegad
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/omega/omega.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/omegad"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/omegad.pid"
+
+# Where to write omegad data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/omegad"
+
+# User and group to own omegad process
+#BITCOIND_USER="omega"
+#BITCOIND_GROUP="omega"
+
+# Path to omegad executable
+#BITCOIND_BIN="/usr/bin/omegad"
+
+# Nice value to run omegad under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

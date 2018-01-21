@@ -1,0 +1,26 @@
+[Unit]
+Description=Omega Network's distributed currency daemon
+After=network.target
+
+[Service]
+User=omega
+Group=omega
+
+Type=forking
+PIDFile=/var/lib/omegad/omegad.pid
+
+ExecStart=/usr/bin/omegad -daemon -pid=/var/lib/omegad/omegad.pid \
+          -conf=/etc/omega/omega.conf -datadir=/var/lib/omegad
+
+ExecStop=-/usr/bin/omega-cli -conf=/etc/omega/omega.conf \
+         -datadir=/var/lib/omegad stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

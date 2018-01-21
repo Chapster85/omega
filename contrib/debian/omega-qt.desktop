@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Omega Network
+Comment=Omega Network P2P Cryptocurrency
+Comment[fr]=Omega Network, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Omega Network, eşten eşe kriptografik sanal para birimi
+Exec=omega-qt %u
+Terminal=false
+Type=Application
+Icon=omega128
+MimeType=x-scheme-handler/omega;
+Categories=Office;Finance;
