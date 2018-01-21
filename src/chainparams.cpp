@@ -45,23 +45,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("0x00000c393bf1eaf9757be560092cc08a7b1ff0345e874b12521522e27862d7d7"))
-	(2, uint256("0x00000310d966793ec3dd080a97b10afa0c848432c01b4053d2c6f206e1449e28"))
-	(1479, uint256("0x00000000071b53f74e2f55ffa657cf1fc39807fb584e797ed0c6b22a4527d51c"))
-	(5000, uint256("0x0000000002afc607345f345261bf9713c7a9cf8d50191cb338250bd4be0090b5"))
-	(10000, uint256("0x000000000a43a6d2b09f1dbf4ea454b639838fb43686158e131d8b7a36777ca6"))
-	(20000, uint256("0x0000000000e1a4f0659738de768c662164a20f11ca16c77dde422ee2d7369a80"))
-	(30000, uint256("0x00000000040ac4aa7fda2d6fdd2745c788469b482eec8da79842e88bbbfc70c3"))
-	(40000, uint256("0x0000000003265c4aded591f0b648b626abf0e4316295b6baeeadbb6c744f768e"))
-	(50000, uint256("0x00000000052c4943642d41377f0968650871a5351c896a4cfe74e41edd2adf28"))
-	(60000, uint256("0x00000000016a565d7d8b0c96138a9d6873510fece3beffd5295ea517ce4e6b8d"))
-	(70000, uint256("0x00000000039673e6ee9944479068800c78f479dfb6b5d23d748d542af073440d"))
-	(80000, uint256("0x0000000008dacfe17e44c93490c36c4d365fb6309f614c05bfa9952e9c08765f"))
-	(89319, uint256("0x00000000031005c122f47eef1495a44221632fc7cc94b6b5ff68bc7da826c012"))	
-	(95771, uint256("0x00000000021cef5896d94a2d87d928d8fdf943a8d260386471e06b03c635acc6"))
-	(104581, uint256("0x0000000001040e54fab7cb94317cade9461c6500c77a492ba1afd4d04949861b"))
-	(127770, uint256("0x000000000053c7733ed070490012321680e21557bb309ebc0e52265326ffbd0d"))
-	(130116, uint256("0x000000000059038c0121e8c503ba86ca6233b25f0ab1c4836be94d5e1bc79db9"));	
+	(0, uint256("0x00000c393bf1eaf9757be560092cc08a7b1ff0345e874b12521522e27862d7d7"));
 	
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
@@ -105,34 +89,30 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x02;
-        pchMessageStart[1] = 0x21;
-        pchMessageStart[2] = 0x01;
-        pchMessageStart[3] = 0xa1;
-        vAlertPubKey = ParseHex("045da9271f5d9df405d9e83c7c7e62e9c831cc85c51ffaa6b515c4f9c845dec4bf256460003f26ba9d394a17cb57e6759fe231eca75b801c20bccd19cbe4b7942d");
-        nDefaultPort = 60020;
-        bnProofOfWorkLimit = ~uint256(0) >> 20; // Omega Network starting difficulty is 1 / 2^12
+        pchMessageStart[0] = 0x2b;
+        pchMessageStart[1] = 0x9a;
+        pchMessageStart[2] = 0x8a;
+        pchMessageStart[3] = 0x60;
+        vAlertPubKey = ParseHex("0465af1bbd2b0dc6346ab1cc748ffc7d9f466d7e7f706c10d2d8b7364ca4b03ab8220b6fdcc99cd1b8309fd903ad37281b0ac76b9d5dc16b553fc90e45f2034834");
+        nDefaultPort = 53247;
+        bnProofOfWorkLimit = ~uint256(0) >> 20;
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Omega Network: 1 minute
-        nTargetSpacing = 1 * 60;  // Omega Network: 1 minute
-        nMaturity = 101;
-		nMaxMoneyOut = 10000000000 * COIN;
-        /** Height or Time Based Activations **/
-        nLastPOWBlock = 259200;
+        nTargetTimespan = 1 * 60;
+        nTargetSpacing = 1 * 60;
+        nMaturity = 100;
+        nMaxMoneyOut = 10000000000 * COIN;
+        nLastPOWBlock = 100000;
         nModifierUpdateBlock = 1;
-		
-        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
-        nZerocoinStartTime = 1523653200; // April 13, 2018 21:00:00 UTC
-		nZerocoinStartHeight = 262596;
-		
-		const char* pszTimestamp = "Omega Network 30-09-2017";
-		
+        nBlockEnforceSerialRange = 1;
+        nZerocoinStartTime = 2000000000; // never (is too buggy/vuln)
+	nZerocoinStartHeight = 9999999;
+
+	const char* pszTimestamp = "omega network - launched january 2018";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
-				
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 0 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("045da9271f5d9df405d9e83c7c7e62e9c831cc85c51ffaa6b515c4f9c845dec4bf256460003f26ba9d394a17cb57e6759fe231eca75b801c20bccd19cbe4b7942d") << OP_CHECKSIG;
@@ -140,38 +120,22 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1506779239;
+        genesis.nTime = 1516406400;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 500317;
+        genesis.nNonce = 0;
         hashGenesisBlock = genesis.GetHash();
 		
-        assert(hashGenesisBlock == uint256("0x00000c393bf1eaf9757be560092cc08a7b1ff0345e874b12521522e27862d7d7"));
-        assert(genesis.hashMerkleRoot == uint256("0xa84934befc603b6dc91cd53895bf45cd056b4e7a9562067d7608b94e8704815d"));
+        assert(hashGenesisBlock == uint256("0x"));
+        assert(genesis.hashMerkleRoot == uint256("0x"));
 		
-        vSeeds.push_back(CDNSSeedData("omeganode.dyndns.org", "omeganode.dyndns.org"));
-		vSeeds.push_back(CDNSSeedData("omeganode1.dyndns.org", "omeganode1.dyndns.org"));
-		vSeeds.push_back(CDNSSeedData("omeganode2.dyndns.org", "omeganode2.dyndns.org"));
-		vSeeds.push_back(CDNSSeedData("omeganode3.dyndns.org", "omeganode3.dyndns.org"));
-		vSeeds.push_back(CDNSSeedData("omeganode4.dyndns.org", "omeganode4.dyndns.org"));
-		vSeeds.push_back(CDNSSeedData("omeganode5.dyndns.org", "omeganode5.dyndns.org"));
-		vSeeds.push_back(CDNSSeedData("omeganode6.dyndns.org", "omeganode6.dyndns.org"));
-		
-		vSeeds.push_back(CDNSSeedData("node1.omegacoin.com", "node1.omegacoin.com"));
-		vSeeds.push_back(CDNSSeedData("node2.omegacoin.com", "node2.omegacoin.com"));
-		vSeeds.push_back(CDNSSeedData("node3.omegacoin.com", "node3.omegacoin.com"));
-		vSeeds.push_back(CDNSSeedData("node4.omegacoin.com", "node4.omegacoin.com"));
-		vSeeds.push_back(CDNSSeedData("node5.omegacoin.com", "node5.omegacoin.com"));
-		vSeeds.push_back(CDNSSeedData("node6.omegacoin.com", "node6.omegacoin.com"));
-
-		
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 63);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 13);
-        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,115); // o
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,110); // m
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1,243);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x21)(0x31)(0x2B).convert_to_container<std::vector<unsigned char> >();
-        // 	BIP44 coin type is 'TBD'
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x77).convert_to_container<std::vector<unsigned char> >();
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
+
         fRequireRPCPassword = true;
         fMiningRequiresPeers = true;
         fAllowMinDifficultyBlocks = false;
@@ -182,10 +146,10 @@ public:
         fTestnetToBeDeprecatedFieldRPC = false;
         fHeadersFirstSyncingActive = false;
         nPoolMaxTransactions = 3;
-        strSporkKey = "045da9271f5d9df405d9e83c7c7e62e9c831cc85c51ffaa6b515c4f9c845dec4bf256460003f26ba9d394a17cb57e6759fe231eca75b801c20bccd19cbe4b7942d";
+        strSporkKey = "044a6c4fdb9866a6ff0a8dfedc5377ceb91a4f6eb41821231cbe9fa9c7c9928916d2685155a0cbc38de208c54b52ae1b7f5d2cb52e739f557db34519770ac27ca8";
         
-        strObfuscationPoolDummyAddress = "Sg3aLcSeLqbpEsVgoXtDFrpDYDfAsf1qxv";
-        nStartMasternodePayments = 1403728576; //Wed, 25 Jun 2014 20:36:16 GMT
+        strObfuscationPoolDummyAddress = "oShaJQFsmmEK7GFtsq357YNf3uCw1RzFeQ";
+        nStartMasternodePayments = 1403728576;
 
         /** Zerocoin */
         zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
@@ -194,13 +158,13 @@ public:
             "7259085141865462043576798423387184774447920739934236584823824281198163815010674810451660377306056201619676256133"
             "8441436038339044149526344321901146575444541784240209246165157233507787077498171257724679629263863563732899121548"
             "31438167899885040445364023527381951378636564391212010397122822120720357";
-        nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
-        nMinZerocoinMintFee = 1 * CENT; //high fee required for zerocoin mints
-        nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
+        nMaxZerocoinSpendsPerTransaction = 7;
+        nMinZerocoinMintFee = 1 * CENT;
+        nMintRequiredConfirmations = 20;
         nRequiredAccumulation = 2;
-        nDefaultSecurityLevel = 100; //full security level for accumulators
-        nZerocoinHeaderVersion = 4; //Block headers must be this version once zerocoin is active
-        nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
+        nDefaultSecurityLevel = 100;
+        nZerocoinHeaderVersion = 4;
+        nBudget_Fee_Confirmations = 6;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
