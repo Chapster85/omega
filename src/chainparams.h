@@ -124,6 +124,7 @@ protected:
     int nDefaultPort;
     uint256 bnProofOfWorkLimit;
     int nMaxReorganizationDepth;
+    int nSubsidySlowStartInterval;
     int nSubsidyHalvingInterval;
     int nEnforceBlockUpgradeMajority;
     int nRejectBlockOutdatedMajority;

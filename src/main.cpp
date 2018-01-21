@@ -8,6 +8,7 @@
 
 #include "main.h"
 
+#include <stdlib.h>
 #include "accumulators.h"
 #include "addrman.h"
 #include "alert.h"

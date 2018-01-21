@@ -97,6 +97,7 @@ public:
         nDefaultPort = 53247;
         bnProofOfWorkLimit = ~uint256(0) >> 20;
         nSubsidyHalvingInterval = 210000;
+        nSubsidySlowStartInterval = 3500;
         nMaxReorganizationDepth = 100;
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60;
@@ -254,6 +255,7 @@ public:
         pchMessageStart[2] = 0x7e;
         pchMessageStart[3] = 0xac;
         nSubsidyHalvingInterval = 150;
+        nSubsidySlowStartInterval = 3500;
         nMinerThreads = 1;
         nTargetTimespan = 24 * 60 * 60; // Omega Network: 1 day
         nTargetSpacing = 1 * 60;        // Omega Network: 1 minutes
