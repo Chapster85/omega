@@ -12,7 +12,7 @@ Omega is a cutting edge cryptocurrency, with many features not available in most
 <table>
 <tr><td>Algo</td><td>OmegaHash</td></tr>
 <tr><td>Block Time</td><td>60 Seconds</td></tr>
-<tr><td>Difficulty Retargeting</td><td>Every blocks</td></tr>
+<tr><td>Difficulty Retargeting</td><td>Every block</td></tr>
 <tr><td>Max Coin Supply (PoW Phase)</td><td>20,000,000 OMEGA</td></tr>
 <tr><td>Max Coin Supply (PoS Phase)</td><td>Infinite</td></tr>
 <tr><td>Premine</td><td>580,000 OMEGA</td></tr>

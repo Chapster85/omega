@@ -104,13 +104,13 @@ public:
         nTargetSpacing = 1 * 60;
         nMaturity = 100;
         nMaxMoneyOut = 10000000000 * COIN;
-        nLastPOWBlock = 100000;
+        nLastPOWBlock = 103500;
         nModifierUpdateBlock = 1;
         nBlockEnforceSerialRange = 1;
         nZerocoinStartTime = 2000000000; // never (is too buggy/vuln)
-	nZerocoinStartHeight = 9999999;
+        nZerocoinStartHeight = 99999999;
 
-	const char* pszTimestamp = "omega network - launched january 2018";
+        const char* pszTimestamp = "omega network - launched january 2018";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
