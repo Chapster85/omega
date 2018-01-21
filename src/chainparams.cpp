@@ -123,11 +123,11 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1516406400;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 0;
+        genesis.nNonce = 2775132;
         hashGenesisBlock = genesis.GetHash();
-		
-        assert(hashGenesisBlock == uint256("0x"));
-        assert(genesis.hashMerkleRoot == uint256("0x"));
+
+        assert(hashGenesisBlock == uint256("0x000008bbf90f935533766a1eb2a4a562bb464164fa6c845c78d8d2d50420b461"));
+        assert(genesis.hashMerkleRoot == uint256("0x038cb688071c6a617cb99e63cb74c8ae1a96bdbe00de4b66aec31abdd1368733"));
 		
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,115); // o
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,110); // m

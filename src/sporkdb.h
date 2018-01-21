@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Omega Network_CSPORKDB_H
-#define Omega Network_CSPORKDB_H
+#ifndef OMEGA_CSPORKDB_H
+#define OMEGA_CSPORKDB_H
 
 #include <boost/filesystem/path.hpp>
 #include "leveldbwrapper.h"

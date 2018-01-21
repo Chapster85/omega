@@ -1753,7 +1753,7 @@ bool AppInit2(boost::thread_group& threadGroup)
     }
 
 // XX42 Remove/refactor code below. Until then provide safe defaults
-    nAnonymizeOmega NetworkAmount = 2;
+    nAnonymizeOmegaAmount = 2;
 
 //    nLiquidityProvider = GetArg("-liquidityprovider", 0); //0-100
 //    if (nLiquidityProvider != 0) {
@@ -1762,9 +1762,9 @@ bool AppInit2(boost::thread_group& threadGroup)
 //        nZeromintPercentage = 99999;
 //    }
 //
-//    nAnonymizeOmega NetworkAmount = GetArg("-anonymizeomegaamount", 0);
-//    if (nAnonymizeOmega NetworkAmount > 999999) nAnonymizeOmega NetworkAmount = 999999;
-//    if (nAnonymizeOmega NetworkAmount < 2) nAnonymizeOmega NetworkAmount = 2;
+//    nAnonymizeOmegaAmount = GetArg("-anonymizeomegaamount", 0);
+//    if (nAnonymizeOmegaAmount > 999999) nAnonymizeOmegaAmount = 999999;
+//    if (nAnonymizeOmegaAmount < 2) nAnonymizeOmegaAmount = 2;
 
     fEnableSwiftTX = GetBoolArg("-enableswifttx", fEnableSwiftTX);
     nSwiftTXDepth = GetArg("-swifttxdepth", nSwiftTXDepth);
@@ -1778,7 +1778,7 @@ bool AppInit2(boost::thread_group& threadGroup)
 
     LogPrintf("fLiteMode %d\n", fLiteMode);
     LogPrintf("nSwiftTXDepth %d\n", nSwiftTXDepth);
-    LogPrintf("Anonymize Omega Network Amount %d\n", nAnonymizeOmega NetworkAmount);
+    LogPrintf("Anonymize Omega Amount %d\n", nAnonymizeOmegaAmount);
     LogPrintf("Budget Mode %s\n", strBudgetMode.c_str());
 
     /* Denominations

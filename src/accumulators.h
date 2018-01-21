@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Omega Network_ACCUMULATORS_H
-#define Omega Network_ACCUMULATORS_H
+#ifndef OMEGA_ACCUMULATORS_H
+#define OMEGA_ACCUMULATORS_H
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Denominations.h"

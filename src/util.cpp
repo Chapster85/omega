@@ -121,7 +121,7 @@ int nZeromintPercentage = 10;
 int nPreferredDenom = 0;
 const int64_t AUTOMINT_DELAY = (60 * 5); // Wait at least 5 minutes until Automint starts
 
-int nAnonymizeOmega NetworkAmount = 1000;
+int nAnonymizeOmegaAmount = 1000;
 int nLiquidityProvider = 0;
 /** Spork enforcement enabled time */
 int64_t enforceMasternodePaymentsTime = 4085657524;
@@ -238,7 +238,7 @@ bool LogAcceptCategory(const char* category)
             const vector<string>& categories = mapMultiArgs["-debug"];
             ptrCategory.reset(new set<string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
-            // "omega" is a composite category enabling all Omega Network-related debug output
+            // "omega" is a composite category enabling all Omega-related debug output
             if (ptrCategory->count(string("omega"))) {
                 ptrCategory->insert(string("obfuscation"));
                 ptrCategory->insert(string("swiftx"));
@@ -425,13 +425,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-// Windows < Vista: C:\Documents and Settings\Username\Application Data\Omega Network
-// Windows >= Vista: C:\Users\Username\AppData\Roaming\Omega Network
-// Mac: ~/Library/Application Support/Omega Network
-// Unix: ~/.omega
+// Windows < Vista: C:\Documents and Settings\Username\Application Data\OmegaNetwork
+// Windows >= Vista: C:\Users\Username\AppData\Roaming\OmegaNetwork
+// Mac: ~/Library/Application Support/OmegaNetwork
+// Unix: ~/.omeganetwork
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Omega Network";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "OmegaNetwork";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -443,10 +443,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "Omega Network";
+    return pathRet / "OmegaNetwork";
 #else
     // Unix
-    return pathRet / ".omega";
+    return pathRet / ".omeganetwork";
 #endif
 #endif
 }
