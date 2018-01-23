@@ -52,11 +52,11 @@ void CActiveMasternode::ManageStatus()
             return;
         }
 
-        if (pwalletMain->GetBalance() == 0) {
-            notCapableReason = "Hot node, waiting for remote activation.";
-            LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
-            return;
-        }
+//        if (pwalletMain->GetBalance() == 0) {
+//            notCapableReason = "Hot node, waiting for remote activation.";
+//            LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
+//            return;
+//        }
 
         if (strMasterNodeAddr.empty()) {
             if (!GetLocal(service)) {
