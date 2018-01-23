@@ -226,10 +226,10 @@ QT_TRANSLATE_NOOP("omega-core", ""
 QT_TRANSLATE_NOOP("omega-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("omega-core", "(60020 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("omega-core", "(53247 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("omega-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("omega-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("omega-core", "(must be 60020 for mainnet)"),
+QT_TRANSLATE_NOOP("omega-core", "(must be 53247 for mainnet)"),
 QT_TRANSLATE_NOOP("omega-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("omega-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("omega-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),
