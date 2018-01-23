@@ -17,6 +17,11 @@
 //
 void CActiveMasternode::ManageStatus()
 {
+
+            LogPrintf("CActiveMasternode::ManageStatus() - Is capable master node!\n");
+            status = ACTIVE_MASTERNODE_STARTED;
+            return;
+
     std::string errorMessage;
 
     if (!fMasterNode) return;
