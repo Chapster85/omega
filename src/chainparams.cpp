@@ -93,7 +93,7 @@ public:
         pchMessageStart[1] = 0x9a;
         pchMessageStart[2] = 0x8a;
         pchMessageStart[3] = 0x60;
-        vAlertPubKey = ParseHex("0465af1bbd2b0dc6346ab1cc748ffc7d9f466d7e7f706c10d2d8b7364ca4b03ab8220b6fdcc99cd1b8309fd903ad37281b0ac76b9d5dc16b553fc90e45f2034834");
+        vAlertPubKey = ParseHex("04b4e722f69bae7e0d850f9b06bc1370b24c0f29368292b19cb6095a78585c22fe56301d643373bd35c61d6d6500fa5477c4304a35ad4407d4bcb46ff89b84d124");   // as at 23012018
         nDefaultPort = 53247;
         bnProofOfWorkLimit = ~uint256(0) >> 20;
         nSubsidyHalvingInterval = 210000;
@@ -105,9 +105,9 @@ public:
         nMaturity = 100;
         nMaxMoneyOut = 10000000000 * COIN;
         nLastPOWBlock = 103500;
-        nModifierUpdateBlock = 1;
-        nBlockEnforceSerialRange = 1;
-        nZerocoinStartTime = 2000000000; // never (is too buggy/vuln)
+        nModifierUpdateBlock = 99999999;
+        nBlockEnforceSerialRange = 99999999;
+        nZerocoinStartTime = 2000000000; // never
         nZerocoinStartHeight = 99999999;
 
         const char* pszTimestamp = "omega network - launched january 2018";
@@ -128,6 +128,10 @@ public:
 
         assert(hashGenesisBlock == uint256("0x000008bbf90f935533766a1eb2a4a562bb464164fa6c845c78d8d2d50420b461"));
         assert(genesis.hashMerkleRoot == uint256("0x038cb688071c6a617cb99e63cb74c8ae1a96bdbe00de4b66aec31abdd1368733"));
+
+        vSeeds.push_back(CDNSSeedData("node0.bitcones.org", "node0.bitcones.org"));
+        vSeeds.push_back(CDNSSeedData("node1.bitcones.org", "node1.bitcones.org"));
+        vSeeds.push_back(CDNSSeedData("node2.bitcones.org", "node2.bitcones.org"));
 		
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,115); // o
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,110); // m
@@ -146,9 +150,9 @@ public:
         fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
         fHeadersFirstSyncingActive = false;
+
         nPoolMaxTransactions = 3;
-        strSporkKey = "044a6c4fdb9866a6ff0a8dfedc5377ceb91a4f6eb41821231cbe9fa9c7c9928916d2685155a0cbc38de208c54b52ae1b7f5d2cb52e739f557db34519770ac27ca8";
-        
+        strSporkKey = "04FE64183602743AFC80D435123C3840AB1E3D5A5B6EF10731F78E0FD778F14AC2B87F015FB20ED0AE4DC40EB043CF59D7B237936D1A660A1E1F278B6642760D5C";     // as at 23012018
         strObfuscationPoolDummyAddress = "oShaJQFsmmEK7GFtsq357YNf3uCw1RzFeQ";
         nStartMasternodePayments = 1403728576;
 
