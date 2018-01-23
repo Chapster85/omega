@@ -2180,15 +2180,14 @@ int64_t GetBlockValue(int nHeight)
     // premine
     if (nHeight == 0) { return (580000 * COIN); }
 
-    // ensure smooth coin emission
-    if (nHeight > 0 && nHeight < 99999) {
-      nSubsidy /= Params().SubsidySlowStartInterval();
-      nSubsidy *= (nHeight+1);
-    } else if (nHeight > 99999) {
-      nSubsidy /= Params().SubsidySlowStartInterval();
-      nSubsidy *= abs(nHeight - 99999);
-      nSubsidy = (195 * COIN) - nSubsidy;
-    }
+    // alternate routine
+    if (nHeight > 0 && nHeight < 1000) { nSubsidy = 10 * COIN; }
+    if (nHeight >= 1000 && nHeight < 2000) { nSubsidy = 70 * COIN; }
+    if (nHeight >= 2000 && nHeight < 3500) { nSubsidy = 130 * COIN; }
+    if (nHeight >= 3500) { nSubsidy = 195 * COIN; }
+    if (nHeight >= 101000 && nHeight < 102000) { nSubsidy = 130 * COIN; }
+    if (nHeight >= 102000 && nHeight < 103500) { nSubsidy = 70 * COIN; }
+    if (nHeight >= 103500) { nSubsidy = 10 * COIN; }
 
     // catch min/max condition
     if (nSubsidy < 10 * COIN) { nSubsidy = 10 * COIN; }
