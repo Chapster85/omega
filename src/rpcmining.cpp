@@ -446,8 +446,8 @@ Value getblocktemplate(const Array& params, bool fHelp)
     if (strMode != "template")
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid mode");
 
-    if (vNodes.empty())
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Omega Network is not connected!");
+//    if (vNodes.empty())
+//        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Omega Network is not connected!");
 
    // if (IsInitialBlockDownload())
     //    throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Omega Network is downloading blocks...");
@@ -655,7 +655,7 @@ Value getblocktemplate(const Array& params, bool fHelp)
     }
 
     result.push_back(Pair("masternode_payments", pblock->nTime > Params().StartMasternodePayments()));
-    result.push_back(Pair("enforce_masternode_payments", true));
+    result.push_back(Pair("enforce_masternode_payments", pblock->nTime > Params().StartMasternodePayments()));  // modified
 
     return result;
 }

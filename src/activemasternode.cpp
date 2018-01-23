@@ -18,10 +18,6 @@
 void CActiveMasternode::ManageStatus()
 {
 
-            LogPrintf("CActiveMasternode::ManageStatus() - Is capable master node!\n");
-            status = ACTIVE_MASTERNODE_STARTED;
-            return;
-
     std::string errorMessage;
 
     if (!fMasterNode) return;
@@ -57,11 +53,11 @@ void CActiveMasternode::ManageStatus()
             return;
         }
 
-//        if (pwalletMain->GetBalance() == 0) {
-//            notCapableReason = "Hot node, waiting for remote activation.";
-//            LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
-//            return;
-//        }
+    if (pwalletMain->GetBalance() == 0) {
+          notCapableReason = "Hot node, waiting for remote activation.";
+          LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
+          return;
+    }
 
         if (strMasterNodeAddr.empty()) {
             if (!GetLocal(service)) {

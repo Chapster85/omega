@@ -124,6 +124,9 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
 
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
 
+    LogPrintf("%08x \n", nBits);
+    LogPrintf("%s \n", hash.ToString().c_str());
+
     // Check range
     if (fNegative || bnTarget == 0 || fOverflow || bnTarget > Params().ProofOfWorkLimit())
         return error("CheckProofOfWork() : nBits below minimum work");
