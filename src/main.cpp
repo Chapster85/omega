@@ -1444,6 +1444,9 @@ bool CheckZerocoinSpend(const CTransaction tx, bool fVerifySignature, CValidatio
 
 bool CheckTransaction(const CTransaction& tx, bool fZerocoinActive, bool fRejectBadUTXO, CValidationState& state)
 {
+    // debug
+    LogPrintf("tx: %s\n", tx.ToString().c_str());
+
     // Basic checks that don't depend on any context
     if (tx.vin.empty())
         return state.DoS(10, error("CheckTransaction() : vin empty"),
