@@ -108,7 +108,7 @@ public:
         nModifierUpdateBlock = 99999999;
         nBlockEnforceSerialRange = 99999999;
         nZerocoinStartTime = 2000000000; // never
-        nZerocoinStartHeight = 99999999;
+        nZerocoinStartHeight = 9999999;
 
         const char* pszTimestamp = "omega network - launched january 2018";
         CMutableTransaction txNew;
@@ -142,7 +142,7 @@ public:
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
         fRequireRPCPassword = true;
-        fMiningRequiresPeers = false;
+        fMiningRequiresPeers = true;
         fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
@@ -154,7 +154,7 @@ public:
         nPoolMaxTransactions = 3;
         strSporkKey = "04FE64183602743AFC80D435123C3840AB1E3D5A5B6EF10731F78E0FD778F14AC2B87F015FB20ED0AE4DC40EB043CF59D7B237936D1A660A1E1F278B6642760D5C";     // as at 23012018
         strObfuscationPoolDummyAddress = "oShaJQFsmmEK7GFtsq357YNf3uCw1RzFeQ";
-        nStartMasternodePayments = 1916406400;
+        nStartMasternodePayments = 1516406400;
 
         /** Zerocoin */
         zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
