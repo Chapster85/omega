@@ -6442,10 +6442,11 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         CBloomFilter filter;
         vRecv >> filter;
 
-        if (!filter.IsWithinSizeConstraints())
+        if (!filter.IsWithinSizeConstraints()){
             // There is no excuse for sending a too-large filter
+            LogPrintf("too-large filter\n");
             Misbehaving(pfrom->GetId(), 100);
-        else {
+        } else {
             LOCK(pfrom->cs_filter);
             delete pfrom->pfilter;
             pfrom->pfilter = new CBloomFilter(filter);
@@ -6462,13 +6463,16 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         // Nodes must NEVER send a data item > 520 bytes (the max size for a script data object,
         // and thus, the maximum size any matched object can have) in a filteradd message
         if (vData.size() > MAX_SCRIPT_ELEMENT_SIZE) {
+            LogPrintf("too-large data item\n");
             Misbehaving(pfrom->GetId(), 100);
         } else {
             LOCK(pfrom->cs_filter);
-            if (pfrom->pfilter)
+            if (pfrom->pfilter) {
                 pfrom->pfilter->insert(vData);
-            else
+            } else {
+                LogPrintf("too-large data item2\n");
                 Misbehaving(pfrom->GetId(), 100);
+            }
         }
     }
 
