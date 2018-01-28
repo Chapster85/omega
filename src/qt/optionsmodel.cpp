@@ -235,7 +235,7 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return QVariant(nZeromintPercentage);
         case ZeromintPrefDenom:
             return QVariant(nPreferredDenom);
-        case AnonymizeOmega NetworkAmount:
+        case AnonymizeOmegaNetworkAmount:
             return QVariant(nAnonymizeOmegaNetworkAmount);
         case Listen:
             return settings.value("fListen");
@@ -351,7 +351,7 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             emit preferredDenomChanged(nPreferredDenom);
             break;
 
-        case AnonymizeOmega NetworkAmount:
+        case AnonymizeOmegaNetworkAmount:
             nAnonymizeOmegaNetworkAmount = value.toInt();
             settings.setValue("nAnonymizeOmegaNetworkAmount", nAnonymizeOmegaNetworkAmount);
             emit anonymizeOmega NetworkAmountChanged(nAnonymizeOmegaNetworkAmount);
