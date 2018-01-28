@@ -80,10 +80,10 @@ void OptionsModel::Init()
         settings.setValue("nZeromintPercentage", 10);
     nZeromintPercentage = settings.value("nZeromintPercentage").toLongLong();
 
-    if (!settings.contains("nAnonymizeOmega NetworkAmount"))
-        settings.setValue("nAnonymizeOmega NetworkAmount", 1000);
+    if (!settings.contains("nAnonymizeOmegaNetworkAmount"))
+        settings.setValue("nAnonymizeOmegaNetworkAmount", 1000);
 
-    nAnonymizeOmega NetworkAmount = settings.value("nAnonymizeOmega NetworkAmount").toLongLong();
+    nAnonymizeOmegaNetworkAmount = settings.value("nAnonymizeOmegaNetworkAmount").toLongLong();
 
     if (!settings.contains("fShowMasternodesTab"))
         settings.setValue("fShowMasternodesTab", masternodeConfig.getCount());
@@ -152,8 +152,8 @@ void OptionsModel::Init()
         SoftSetArg("-zeromintpercentage", settings.value("nZeromintPercentage").toString().toStdString());
     if (settings.contains("nPreferredDenom"))
         SoftSetArg("-preferredDenom", settings.value("nPreferredDenom").toString().toStdString());
-    if (settings.contains("nAnonymizeOmega NetworkAmount"))
-        SoftSetArg("-anonymizeomegaamount", settings.value("nAnonymizeOmega NetworkAmount").toString().toStdString());
+    if (settings.contains("nAnonymizeOmegaNetworkAmount"))
+        SoftSetArg("-anonymizeomegaamount", settings.value("nAnonymizeOmegaNetworkAmount").toString().toStdString());
 
     language = settings.value("language").toString();
 }
@@ -236,7 +236,7 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
         case ZeromintPrefDenom:
             return QVariant(nPreferredDenom);
         case AnonymizeOmega NetworkAmount:
-            return QVariant(nAnonymizeOmega NetworkAmount);
+            return QVariant(nAnonymizeOmegaNetworkAmount);
         case Listen:
             return settings.value("fListen");
         default:
@@ -352,9 +352,9 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             break;
 
         case AnonymizeOmega NetworkAmount:
-            nAnonymizeOmega NetworkAmount = value.toInt();
-            settings.setValue("nAnonymizeOmega NetworkAmount", nAnonymizeOmega NetworkAmount);
-            emit anonymizeOmega NetworkAmountChanged(nAnonymizeOmega NetworkAmount);
+            nAnonymizeOmegaNetworkAmount = value.toInt();
+            settings.setValue("nAnonymizeOmegaNetworkAmount", nAnonymizeOmegaNetworkAmount);
+            emit anonymizeOmega NetworkAmountChanged(nAnonymizeOmegaNetworkAmount);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();
