@@ -1,6 +1,9 @@
 Omega Network Core integration/staging repository
 =================================================
 
+Original - for eyeshield (28/-1/2018)
+We are the real OMEGA! :) https://omeganetwork.io
+
 Omega is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
 - Anonymized transactions using coin mixing technology, we call it _Obfuscation_.
 - Fast transactions featuring guaranteed zero confirmation transactions, we call it _SwiftTX_.
