@@ -355,7 +355,7 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
         case AnonymizeOmegaNetworkAmount:
             nAnonymizeOmegaNetworkAmount = value.toInt();
             settings.setValue("nAnonymizeOmegaNetworkAmount", nAnonymizeOmegaNetworkAmount);
-            emit anonymizeOmegaNetworkAmountChanged(nAnonymizeOmegaNetworkAmount);
+            emit AnonymizeOmegaNetworkAmountChanged(nAnonymizeOmegaNetworkAmount);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();
