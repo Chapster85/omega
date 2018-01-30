@@ -92,7 +92,7 @@ signals:
     void displayUnitChanged(int unit);
     void zeromintPercentageChanged(int);
     void preferredDenomChanged(int);
-    void AnonymizeOmegaNetworkAmount(int);
+    void AnonymizeOmegaNetworkAmountChanged(int);
     void coinControlFeaturesChanged(bool);    
 };
 
