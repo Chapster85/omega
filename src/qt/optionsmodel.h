@@ -90,13 +90,10 @@ private:
 
 signals:
     void displayUnitChanged(int unit);
-    void zeromintEnableChanged(bool);
     void zeromintPercentageChanged(int);
     void preferredDenomChanged(int);
     void AnonymizeOmegaNetworkAmount(int);
-    void coinControlFeaturesChanged(bool);
-    void hideZeroBalancesChanged(bool);
-    
+    void coinControlFeaturesChanged(bool);    
 };
 
 #endif // BITCOIN_QT_OPTIONSMODEL_H
